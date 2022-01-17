@@ -7,10 +7,8 @@ using System.Text;
 
 namespace RoverInMars.Application.Strategy.MovementStrategy
 {
-    public class TurnLeftCommand : /*CommandFactory, */IMovementCommand
+    public class TurnLeftCommand : IMovementCommand
     {
-        //protected override IMovementCommand MakeProduct => new TurnLeftCommand();
-
         public void Execute(ref Coordinates position, ref int orientationIndex)
             {
                 orientationIndex = (orientationIndex - 1) % 4;

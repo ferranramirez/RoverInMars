@@ -7,16 +7,6 @@ using System.Text;
 
 namespace RoverInMars.Application.Strategy.MovementStrategy
 {
-    //public abstract class CommandFactory
-    //{
-    //    protected abstract IMovementCommand MakeProduct { get; }
-
-    //    public IMovementCommand CreateProduct()
-    //    {
-    //        return this.MakeProduct;
-    //    }
-    //}
-
     public class CommandFactory
     {
         private readonly Coordinates _dimensions;

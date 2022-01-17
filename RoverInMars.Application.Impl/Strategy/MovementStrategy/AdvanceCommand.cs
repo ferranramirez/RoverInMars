@@ -8,7 +8,7 @@ using System.Text;
 
 namespace RoverInMars.Application.Strategy.MovementStrategy
 {
-    public class AdvanceCommand : /*CommandFactory, */IMovementCommand
+    public class AdvanceCommand : IMovementCommand
     {
         protected readonly Coordinates _dimensions;
         protected readonly AdvanceFactory _advanceFactory;
@@ -18,8 +18,6 @@ namespace RoverInMars.Application.Strategy.MovementStrategy
             _dimensions = dimensions;
             _advanceFactory = advanceFactory;
         }
-
-        //protected override IMovementCommand MakeProduct => new TurnRightCommand();
 
         public void Execute(ref Coordinates position, ref int orientationIndex)
         {

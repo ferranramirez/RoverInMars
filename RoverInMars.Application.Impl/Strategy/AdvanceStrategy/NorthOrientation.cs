@@ -3,20 +3,14 @@ using System;
 
 namespace RoverInMars.Application.Strategy.AdvanceStrategy
 {
-    public class NorthOrientation : IAdvance
+    public class NorthOrientation : BaseOrientation, IAdvance
     {
-        public void Execute(Coordinates dimensions, Coordinates position)
-        {
-            Advance(position);
-            Validate(dimensions, position);
-        }
-
-        private static void Advance(Coordinates position)
+        protected override void Advance(Coordinates position)
         {
             ++position.Height;
         }
 
-        private static void Validate(Coordinates dimensions, Coordinates position)
+        protected override void Validate(Coordinates position, Coordinates dimensions = null)
         {
             if (position.Height > dimensions.Height)
                 throw new Exception("Rover out of the matrix");

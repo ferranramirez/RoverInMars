@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text;
 
-namespace RoverInMars.Application.Utils
+namespace RoverInMars.Application.Library.Utils
 {
     public static class Constants
     {

@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RoverInMars.Application.Contract\RoverInMars.Application.Contract.csproj" />
     <ProjectReference Include="..\RoverInMars.Application.Models\RoverInMars.Application.Model.csproj" />
-    <ProjectReference Include="..\RoverInMars.Library\RoverInMars.Application.Library.csproj" />
   </ItemGroup>
 
 </Project>

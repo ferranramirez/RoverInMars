@@ -8,6 +8,6 @@ namespace RoverInMars.Application.Contract
 {
     public interface IMissionService
     {
-        public MissionResult Start(Coordinates dimensions, Coordinates initialPosition, Orientation initialOrientation, Command[] commands);
+        public MissionResult Start(Coordinates dimensions, Coordinates initialPosition, Orientation initialOrientation, Enum.Movement[] commands);
     }
 }

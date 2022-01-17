@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RoverInMars.Application.Contract\RoverInMars.Application.Contract.csproj" />
     <ProjectReference Include="..\RoverInMars.Application.Impl\RoverInMars.Application.csproj" />
   </ItemGroup>
 

@@ -25,5 +25,10 @@ namespace RoverInMars.Application.Model
                    Orientation == result.Orientation &&
                    EqualityComparer<Coordinates>.Default.Equals(FinalCoordinates, result.FinalCoordinates);
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Valid, Orientation, FinalCoordinates);
+        }
     }
 }

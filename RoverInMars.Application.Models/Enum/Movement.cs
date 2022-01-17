@@ -1,6 +1,6 @@
 ﻿namespace RoverInMars.Application.Enum
 {
-    public enum Command
+    public enum Movement
     {
         A = 0,
         L = 1,

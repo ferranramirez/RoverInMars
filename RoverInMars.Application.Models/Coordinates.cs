@@ -21,5 +21,10 @@ namespace RoverInMars.Application.Model
                    Width == coordinates.Width &&
                    Height == coordinates.Height;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Width, Height);
+        }
     }
 }

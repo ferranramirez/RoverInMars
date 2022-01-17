@@ -20,7 +20,72 @@ namespace RoverInMars.Application.UnitTest
         }
 
         [Fact]
-        public void StartMission_GivesValidCoordinates_ReturnsValidResult()
+        public void StartMission_GivenInitialOrientationNorthInLimitAndAdvanceCommands_ReturnsInvalidResult()
+        {
+            //Arrange            
+            var initialPosition = new Coordinates(9, 6); //Same as dimensions
+            var initialOrientation = Orientation.N;
+            var commands = new Movement[]
+                {Movement.A};
+
+            //Act
+            var actual = _missionService.Start(dimensions, initialPosition, initialOrientation, commands);
+
+            //Assert
+            Assert.False(actual.Valid);
+        }
+
+        [Fact]
+        public void StartMission_GivenInitialOrientationSouthInLimitAndAdvanceCommands_ReturnsInvalidResult()
+        {
+            //Arrange            
+            var initialPosition = new Coordinates(0, 0);
+            var initialOrientation = Orientation.S;
+            var commands = new Movement[]
+                {Movement.A};
+
+            //Act
+            var actual = _missionService.Start(dimensions, initialPosition, initialOrientation, commands);
+
+            //Assert
+            Assert.False(actual.Valid);
+        }
+
+        [Fact]
+        public void StartMission_GivenInitialWestOrientationInLimitAndAdvanceCommand_ReturnsInvalidResult()
+        {
+            //Arrange            
+            var initialPosition = new Coordinates(0, 0);
+            var initialOrientation = Orientation.W;
+            var commands = new Movement[]
+                {Movement.A};
+
+            //Act
+            var actual = _missionService.Start(dimensions, initialPosition, initialOrientation, commands);
+
+            //Assert
+            Assert.False(actual.Valid);
+        }
+
+        [Fact]
+        public void StartMission_GivenInitialEastOrientationInLimitAndAdvanceCommand_ReturnsInvalidResult()
+        {
+            //Arrange            
+            var initialPosition = new Coordinates(9, 6); //Same as dimensions
+            var initialOrientation = Orientation.E;
+            var commands = new Movement[]
+                {Movement.A};
+
+            //Act
+            var actual = _missionService.Start(dimensions, initialPosition, initialOrientation, commands);
+
+            //Assert
+            Assert.False(actual.Valid);
+        }
+
+
+        [Fact]
+        public void StartMission_GivenCorrectCommands_ReturnsValidResult()
         {
             //Arrange            
             var expected = new MissionResult(true, Orientation.E, new Coordinates(5, 2));
@@ -38,7 +103,7 @@ namespace RoverInMars.Application.UnitTest
         }
 
         [Fact]
-        public void StartMission_GivesInValidCoordinates_ReturnsInvalidResult()
+        public void StartMission_GivenCommandsThatPointOutOfSquare_ReturnsInvalidResult()
         {
             //Arrange
             var initialPosition = new Coordinates(3, 3);
